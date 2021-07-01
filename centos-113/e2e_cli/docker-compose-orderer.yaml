@@ -17,15 +17,15 @@ services:
       - ./chainData/orderer/orderer2/:/var/hyperledger/production/
       - ./crypto-config/ordererOrganizations/lychee.com/orderers/orderer2.lychee.com/msp:/var/hyperledger/orderer/msp
       - ./crypto-config/ordererOrganizations/lychee.com/orderers/orderer2.lychee.com/tls:/var/hyperledger/orderer/tls
-    extra_hosts:
-      - "z1:10.0.200.113"
-      - "z2:10.0.200.114"
-      - "z3:10.0.200.115"
-      - "k4:10.0.200.116"
-      - "k1:10.0.200.113"
-      - "k2:10.0.200.114"
-      - "k3:10.0.200.115"
-      - "orderer1.lychee.com:10.0.200.111"
-      - "orderer2.lychee.com:10.0.200.113"
-      - "orderer3.lychee.com:10.0.200.114"
+#    extra_hosts:
+#      - "z1:8.8.8.228"
+#      - "z2:8.8.8.228"
+#      - "z3:8.8.8.228"
+#      - "k4:8.8.8.228"
+#      - "k1:8.8.8.228"
+#      - "k2:8.8.8.228"
+#      - "k3:8.8.8.228"
+#      - "orderer1.lychee.com:8.8.8.228"
+#      - "orderer2.lychee.com:8.8.8.228"
+#      - "orderer3.lychee.com:8.8.8.228"
 

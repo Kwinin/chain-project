@@ -22,12 +22,12 @@ services:
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1.org1.lychee.com:5984
     extra_hosts:
-      - "orderer1.lychee.com:10.0.200.111"
-      - "orderer2.lychee.com:10.0.200.113"
-      - "orderer3.lychee.com:10.0.200.114"
-      - "peer0.org1.lychee.com:10.0.200.113"
-      - "peer0.org2.lychee.com:10.0.200.115"
-      - "peer1.org2.lychee.com:10.0.200.116"
+      - "orderer1.lychee.com:8.8.8.228"
+      - "orderer2.lychee.com:8.8.8.228"
+      - "orderer3.lychee.com:8.8.8.228"
+      - "peer0.org1.lychee.com:8.8.8.228"
+      - "peer0.org2.lychee.com:8.8.8.228"
+      - "peer1.org2.lychee.com:8.8.8.228"
   lycheecli:
     container_name: lycheecli
     image: hyperledger/fabric-tools
@@ -53,11 +53,11 @@ services:
         - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     depends_on:
       - peer1.org1.lychee.com
-    extra_hosts:
-      - "orderer1.lychee.com:10.0.200.111"
-      - "orderer2.lychee.com:10.0.200.113"
-      - "orderer3.lychee.com:10.0.200.114"
-      - "peer0.org1.lychee.com:10.0.200.113"
-      - "peer1.org1.lychee.com:10.0.200.114"
-      - "peer0.org2.lychee.com:10.0.200.115"
-      - "peer1.org2.lychee.com:10.0.200.116"
+#    extra_hosts:
+#      - "orderer1.lychee.com:8.8.8.228"
+#      - "orderer2.lychee.com:8.8.8.228"
+#      - "orderer3.lychee.com:8.8.8.228"
+#      - "peer0.org1.lychee.com:8.8.8.228"
+#      - "peer1.org1.lychee.com:8.8.8.228"
+#      - "peer0.org2.lychee.com:8.8.8.228"
+#      - "peer1.org2.lychee.com:8.8.8.228"

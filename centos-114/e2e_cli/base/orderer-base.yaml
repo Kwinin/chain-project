@@ -33,5 +33,5 @@ services:
      volumes:
       - ../channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
      ports:
-      - 7050:7050
+      - 37050:7050
 

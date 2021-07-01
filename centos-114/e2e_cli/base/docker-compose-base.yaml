@@ -50,9 +50,9 @@ services:
         - ../crypto-config/peerOrganizations/org1.lychee.com/peers/peer0.org1.lychee.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/org1.lychee.com/peers/peer0.org1.lychee.com/tls:/etc/hyperledger/fabric/tls
     ports:
-      - 7051:7051
-      - 7052:7052
-      - 7053:7053
+      - 37051:7051
+      - 37052:7052
+      - 37053:7053
 
   peer1.org1.lychee.com:
     extends:
@@ -73,9 +73,9 @@ services:
         - ../crypto-config/peerOrganizations/org1.lychee.com/peers/peer1.org1.lychee.com/tls:/etc/hyperledger/fabric/tls
 
     ports:
-      - 7051:7051
-      - 7052:7052
-      - 7053:7053
+      - 37051:7051
+      - 37052:7052
+      - 37053:7053
   peer0.org2.lychee.com:
     extends:
       file: peer-base.yaml
@@ -94,9 +94,9 @@ services:
         - ../crypto-config/peerOrganizations/org2.lychee.com/peers/peer0.org2.lychee.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/org2.lychee.com/peers/peer0.org2.lychee.com/tls:/etc/hyperledger/fabric/tls
     ports:
-      - 7051:7051
-      - 7052:7052
-      - 7053:7053
+      - 37051:7051
+      - 37052:7052
+      - 37053:7053
   peer1.org2.lychee.com:
     extends:
       file: peer-base.yaml
@@ -115,7 +115,7 @@ services:
         - ../crypto-config/peerOrganizations/org2.lychee.com/peers/peer1.org2.lychee.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/org2.lychee.com/peers/peer1.org2.lychee.com/tls:/etc/hyperledger/fabric/tls
     ports:
-      - 7051:7051
-      - 7052:7052
-      - 7053:7053
+      - 37051:7051
+      - 37052:7052
+      - 37053:7053
 

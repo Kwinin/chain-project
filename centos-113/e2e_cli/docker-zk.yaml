@@ -21,7 +21,7 @@ services:
     volumes:
        # 数据固化，将zookeeper产生的数据映射到本地，当zookeeper丢失等风险是不至于数据丢失
        - ./chainData/zookeeper/z1/:/data/
-    extra_hosts:
-      - "z1:10.0.200.113"
-      - "z2:10.0.200.114"
-      - "z3:10.0.200.115"
+#    extra_hosts:
+#      - "z1:8.8.8.228"
+#      - "z2:8.8.8.228"
+#      - "z3:8.8.8.228"

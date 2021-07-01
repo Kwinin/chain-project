@@ -171,7 +171,7 @@ peer节点状态数据库用的是couchdb，所以包括了4个couchdb节点；
 5、运行测试脚本
    测试脚本的修改目前只修改了org1的peer0节点的脚步，即centos-113上的scripts中的文件；
    进入centos-113节点：
-	docker exec -it lycheecli bash 进入lycheecli客户端容器
+	docker exec -it cli113 bash 进入lycheecli客户端容器
 	./scripts/script.sh sunshine 运行测试脚本；
    出现============ All GOOD, End-2-End execution completed ============ 就大功告成；
  
