@@ -28,8 +28,8 @@ services:
       - "peer0.org1.lychee.com:8.8.8.228"
       - "peer0.org2.lychee.com:8.8.8.228"
       - "peer1.org2.lychee.com:8.8.8.228"
-  lycheecli:
-    container_name: lycheecli
+  cli114:
+    container_name: cli114
     image: hyperledger/fabric-tools
     tty: true
     environment:
