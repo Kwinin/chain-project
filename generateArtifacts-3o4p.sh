@@ -12,7 +12,16 @@ CHANNEL_NAME=$1
 : ${CHANNEL_NAME:="mychannel"}
 echo $CHANNEL_NAME
 
-export FABRIC_ROOT=$PWD/../..
+FABRIC_ROOT=$2
+ARCH=`uname -s | grep Darwin`
+	if [ "$ARCH" == "Darwin" ]; then
+		: ${FABRIC_ROOT:="./bin_files/Darwin"}
+	else
+		: ${FABRIC_ROOT:="./bin_files/Linux"}
+	fi
+echo $FABRIC_ROOT
+
+export FABRIC_ROOT=$FABRIC_ROOT
 export FABRIC_CFG_PATH=$PWD
 echo
 
@@ -42,7 +51,8 @@ function replacePrivateKey () {
 
 ## Generates Org certs using cryptogen tool
 function generateCerts (){
-	CRYPTOGEN=$FABRIC_ROOT/release/$OS_ARCH/bin/cryptogen
+	#CRYPTOGEN=$FABRIC_ROOT/release/$OS_ARCH/bin/cryptogen
+	CRYPTOGEN=$FABRIC_ROOT/bin/cryptogen
 
 	if [ -f "$CRYPTOGEN" ]; then
             echo "Using cryptogen -> $CRYPTOGEN"
@@ -62,7 +72,8 @@ function generateCerts (){
 ## Generate orderer genesis block , channel configuration transaction and anchor peer update transactions
 function generateChannelArtifacts() {
 
-	CONFIGTXGEN=$FABRIC_ROOT/release/$OS_ARCH/bin/configtxgen
+  #CONFIGTXGEN=$FABRIC_ROOT/release/$OS_ARCH/bin/configtxgen
+  CONFIGTXGEN=$FABRIC_ROOT/bin/configtxgen
 	if [ -f "$CONFIGTXGEN" ]; then
             echo "Using configtxgen -> $CONFIGTXGEN"
 	else
@@ -98,6 +109,5 @@ function generateChannelArtifacts() {
 }
 
 generateCerts
-replacePrivateKey
+#replacePrivateKey
 generateChannelArtifacts
-
