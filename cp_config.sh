@@ -1,12 +1,13 @@
 #!/bin/bash
-cp -r crypto-config centos-111/e2e_cli
-cp -r crypto-config centos-113/e2e_cli
-cp -r crypto-config centos-114/e2e_cli
-cp -r crypto-config centos-115/e2e_cli
-cp -r crypto-config centos-116/e2e_cli
-
-cp -r channel-artifacts centos-111/e2e_cli
-cp -r channel-artifacts centos-113/e2e_cli
-cp -r channel-artifacts centos-114/e2e_cli
-cp -r channel-artifacts centos-115/e2e_cli
-cp -r channel-artifacts centos-116/e2e_cli
+path=$1
+files=$(ls $path)
+for filename in $files
+do
+  if [[ "$filename" =~ ^centos-.* ]]; then
+    echo "$filename :"
+    set -x
+    cp -r crypto-config  $filename/e2e_cli
+    cp -r channel-artifacts $filename/e2e_cli
+    set +x
+  fi
+done
